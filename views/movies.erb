@@ -1,0 +1,17 @@
+<h2 class="text-center">What movie was released in <%= @winner[:year] %>?</h2>
+<hr>
+<div class="life-counter">
+  <p>Lifes</p>
+  <div id="lifes">
+    <i class="fa fa-heart"></i> <i class="fa fa-heart"></i> <i class="fa fa-heart"></i>
+  </div>
+</div>
+<hr>
+<div class="movie-list">
+  <% @movies.each do |movie| %>
+    <div class="movie" data-movie-id="<%= movie[:id] %>">
+      <img class="movie__poster" src="<%= movie[:poster] %>" alt="">
+    </div>
+  <% end %>
+</div>
+<input type="hidden" id="winner" data-movie-id="<%= @winner[:id] %>">
